@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "375799615388",
+    "firebase_url": "https://clintshareride.firebaseio.com",
+    "project_id": "clintshareride",
+    "storage_bucket": "clintshareride.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375799615388:android:e70732b7a68b0233",
+        "android_client_info": {
+          "package_name": "com.example.ahsan.clintshareride"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375799615388-7pjhdtlqm7e4sgvpr1sfllhpn8e25bpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ahsan.clintshareride",
+            "certificate_hash": "31c817e1eb267505bc7df22e0b6ea5125ae535f9"
+          }
+        },
+        {
+          "client_id": "375799615388-0aka5cn5nloam8ra6jfufm21k4urodet.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "375799615388-0aka5cn5nloam8ra6jfufm21k4urodet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGNK6xj4_TN-PrdeQ7KTKnxUYipwSa2-Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375799615388-0aka5cn5nloam8ra6jfufm21k4urodet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

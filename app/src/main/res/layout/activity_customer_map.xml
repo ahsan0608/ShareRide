@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout2"
+    tools:context="com.example.ahsan.clintshareride.CustomerMapActivity">
+
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
+
+            <!--<EditText-->
+            <!--android:id="@+id/edtPlace"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="5"-->
+            <!--android:hint="Enter pickup location"-->
+            <!--android:layout_margin="10dp"/>-->
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="5" />
+
+            <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="GO"-->
+            <!--android:id="@+id/btnGO"/>-->
+        </LinearLayout>
+
+        <fragment
+            android:layout_below="@+id/layout_panel"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.ahsan.shareride.Welcome"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/layout_panel">
+            <!--<Switch-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Working"-->
+                <!--android:layout_margin="10sp"-->
+                <!--android:id="@+id/workingSwitch"/>-->
+            <com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch
+            android:layout_marginTop="10sp"
+            android:id="@+id/location_switch"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:icon_release ="@drawable/ic_location_off"
+            app:icon_press ="@drawable/ic_location_on"
+            app:base_release_color="@color/baseReleaseColor"
+            app:base_press_color="@color/basePressColor"
+            app:ball_release_color="@color/ballReleaseColor"
+            app:ball_press_color="@color/ballReleaseColor"/>
+
+        </LinearLayout>
+
+
+
+
+
+        <android.support.v7.widget.CardView
+            app:cardElevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:layout_margin="16dp">
+
+                <!--<com.github.glomadrian.materialanimatedswitch.MaterialAnimatedSwitch-->
+                    <!--android:id="@+id/location_switch"-->
+                    <!--android:layout_weight="3"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--app:icon_release ="@drawable/ic_location_off"-->
+                    <!--app:icon_press ="@drawable/ic_location_on"-->
+                    <!--app:base_release_color="@color/baseReleaseColor"-->
+                    <!--app:base_press_color="@color/basePressColor"-->
+                    <!--app:ball_release_color="@color/ballReleaseColor"-->
+                    <!--app:ball_press_color="@color/ballReleaseColor"/>-->
+
+
+                <Button
+                    android:id="@+id/request"
+                    android:layout_width="57dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:text="Call for help!" />
+
+                <Button
+                    android:id="@+id/test"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Test" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/customerInfo"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@android:color/white"
+        android:elevation="1dp"
+        android:translationZ="1dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:id="@+id/customerProfileImage"
+                android:src="@drawable/ic_person_outline_black_24dp"
+                android:padding="20sp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="40sp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customerDestination"
+                    android:paddingBottom="10sp"
+                    android:text="Destination: --"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customerName"
+                    android:paddingBottom="10sp"
+                    android:text="Name: --"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/requestTitle"
+                    android:paddingBottom="10sp"
+                    android:text="Title: --"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/requestDetails"
+                    android:paddingBottom="10sp"
+                    android:text="Details: --"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/customerPhone"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp"
+                    android:autoLink="phone"
+                    android:background="@android:color/white"
+                    android:text="Contract no: --"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/rideStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pick customer" />
+
+        <Button
+            android:id="@+id/completeStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complete!"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newHelpLayout"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:weightSum="2"
+        android:background="@android:color/white"
+        android:elevation="1dp"
+        android:translationZ="1dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newRequest"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp"
+                    android:layout_weight="1"
+                    android:text="See Request"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:textSize="11sp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cancel"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp"
+                    android:autoLink="phone"
+                    android:text="Cancel"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:id="@+id/driverInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/driverProfileImage"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:padding="20sp"
+                android:src="@drawable/ic_person_outline_black_24dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="40sp">
+
+                <TextView
+                    android:id="@+id/driverName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp" />
+
+                <TextView
+                    android:id="@+id/driverPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp" />
+
+                <TextView
+                    android:id="@+id/driverCar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10sp"
+                    android:paddingTop="20sp" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:numStars="5"
+                    android:stepSize="0.1" />
+
+                <Button
+                android:id="@+id/ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="Ok" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</FrameLayout>
